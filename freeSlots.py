@@ -8,16 +8,25 @@ Created on Mon May  7 10:30:08 2018
 from PIL import Image
 
 import numpy as np
-a = Image.open('paritosh.png')
+a = Image.open('test/test images/snipping_test.png')
+if( a.format == 'png' or a.format == 'PNG'):
+   
+    lab_free = [249,239,164,255]
+    theory_free = [255,255,204,255]
+    busy = [204,255,51,255]
+    break_color = [60,141,188,255] 
+    
+else:
+    
+    lab_free = [249,239,164]
+    theory_free = [255,255,204]
+    busy = [204,255,51]
+    break_color = [60,141,188] 
+    
 a = np.array(a)
-lab_free = [249,239,164,255]
-theory_free = [255,255,204,255]
-busy = [204,255,51,255]
-break_color = [60,141,188,255]
-
-flag = 0
+print(len(a))
 #i refers to columns of image and j refers to rows
-
+flag = 0
 num_col = len(a)
 num_row = len(a[0])
 
@@ -27,6 +36,7 @@ for i in range(num_col):
         if((a[i][j]==theory_free).all() or (a[i][j]==lab_free).all() or (a[i][j]==busy).all()):
             
             flag = 1
+            print(i,j)
             break
     if(flag == 1):
         break
@@ -125,12 +135,12 @@ import json
 with open('data.txt') as json_file:  
     data = json.load(json_file)
     
-data["paritosh"] = free
+data["snip"] = free
 
 with open('data.txt', 'w') as outfile:  
     json.dump(data, outfile)
 # For checking the classes and its class type ( 0 for theory and 1 for lab )            
-print(classes,class_type)       
+#print(classes,class_type)       
         
 #a has 768 columns as another array in a
 
