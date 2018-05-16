@@ -24,7 +24,7 @@ else:
     break_color = [60,141,188] 
     
 a = np.array(a)
-print(len(a))
+#print(len(a))
 #i refers to columns of image and j refers to rows
 flag = 0
 num_col = len(a)
@@ -36,7 +36,7 @@ for i in range(num_col):
         if((a[i][j]==theory_free).all() or (a[i][j]==lab_free).all() or (a[i][j]==busy).all()):
             
             flag = 1
-            print(i,j)
+            #print(i,j)
             break
     if(flag == 1):
         break
