@@ -163,7 +163,7 @@ def convertImage2json( filename ):
                 
     #     Store the data of free slot numbers in  a json file
     save2json (filename, free)
-      
+    return free  
             
     
     
