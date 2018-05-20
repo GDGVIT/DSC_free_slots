@@ -68,6 +68,6 @@ def convertSlotToTime():
         
         # Store the data in day&time.txt in json format
         store2json (name, days )
-         
+        return days
 
         
