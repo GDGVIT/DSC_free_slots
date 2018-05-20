@@ -13,7 +13,7 @@ def free_hrs (name, free_users, reqd_time):
     for i in range(len(reqd_time_avail)):
         
         if(reqd_time_avail[i] == 1):
-            print(reqd_time[i],'-',reqd_time[i]+1,end="  ")
+            print(reqd_time[i],'-',reqd_time[i]+1,end=" | ")
         
     
     
@@ -79,17 +79,20 @@ def findFreeMembers(time_from, time_to, day, slots):
     sorted_list.reverse()
     
 #   Displaying the result to user
+    noMemberFree = 1
     for member in sorted_list:
         
         if(member[1] > 0):
-            
+            noMemberFree = 0
             if(member[1] == hrs):
                 print(member[0])
             else:
                 print(member[0]," Available hrs(",member[1],"): ",end=" ")
+                
                 free_hrs(member[0], free_users, reqd_time)
- 
-    
+        print("")
+    if(noMemberFree == 1):
+        print("I didn't find anyone free during this interval, Try changing the time a little")
 #------------------------------------------------------------------------------
 
 
@@ -97,22 +100,14 @@ def findFreeMembers(time_from, time_to, day, slots):
 if __name__ == "__main__":    
     
     import json
-    with open('slots.txt') as json_file:  
+    with open('day&time.txt') as json_file:  
         slots = json.load(json_file)
     
     name = "paritosh"
     day = "tue"
     time_from = 14
     time_to = 19
-    reqd_time = []
-
-
-    for i in range(time_from, time_to):
-        reqd_time.append (i)
-
     
-    
-    #findFreeSlots(name, day, slots)
     findFreeMembers(time_from, time_to, day, slots)
 
 

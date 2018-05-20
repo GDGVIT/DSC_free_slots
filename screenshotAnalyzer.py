@@ -4,6 +4,8 @@ Created on Mon May  7 10:30:08 2018
 
 @author: parit
 """
+
+
 def findFirstBlock ( array , colors):
     
     flag = 0
@@ -25,15 +27,33 @@ def findFirstBlock ( array , colors):
     pos = [i,j]
     return pos
 
+# -----------------------------------------------------------------------------------------------------------------------
 
+def save2json (filename, free):
+    
+    import json,os
+    current_dir = os.getcwd()
+    
+    free.sort()
+    
+    with open('slotNumbers.txt') as json_file: 
+        slots = json.load(json_file)
+        
+    slots[filename.split('.')[0]] = free
+    
+    with open('slotNumbers.txt', 'w') as outfile:  
+        json.dump(slots, outfile)
+    
+
+#   ---------------------------------------------------------------------------------------------------------------------   
 def convertImage2json( filename ):
     
     
     from PIL import Image
     import numpy as np
-    import json
     
-    a = Image.open('test/test images/' + filename )
+    
+    a = Image.open("test\\test images\\" + filename )
     
     
     if( a.format == 'png' or a.format == 'PNG'):
@@ -58,7 +78,7 @@ def convertImage2json( filename ):
     j = pos[1]     # Column index of the first pixel of first block
            
     free = [] # this contains the free slots . the slot number goes from 1-65 (vertically and then horizontally)
-    classes = []
+    classes = []  
     class_type = [] #0 for theory , 1 for lab
     L = 0
     first = 1 # Implies that we are on the first COLUMN of the slot 
@@ -133,25 +153,17 @@ def convertImage2json( filename ):
             #             to identify the beginning of the next slot
             if((a[i][l]==break_color).all() and ((a[i][l+1]==theory_free).all() or (a[i][l+1]==busy).all())):
                 first = 1
-                
-    sure_free = [26,27,28,29,30,61,62,63,64,65]   
+    
+    # Slots which are always free for everyone             
+    sure_free = [26, 27, 28, 29, 30, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65]   
     
     for e in sure_free:
         if(e not in free):
             free.append(e)
                 
-    
-    
-    with open('slotNumbers.txt') as json_file:  
-        data = json.load(json_file)
-        
-    data[filename.split('.')[0]] = free
-    
-    with open('slotNumbers.txt', 'w') as outfile:  
-        json.dump(data, outfile)
-    # For checking the classes and its class type ( 0 for theory and 1 for lab )            
-    #print(classes,class_type)       
+    #     Store the data of free slot numbers in  a json file
+    save2json (filename, free)
+      
             
-    #a has 768 columns as another array in a
     
-convertImage2json('harshit.png')
+    
