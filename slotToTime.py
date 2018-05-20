@@ -8,7 +8,7 @@ time to slot
 """
 import json
 import math
-with open('data.txt') as json_file:  
+with open('slotNumbers.txt') as json_file:  
     data = json.load(json_file)
     L = (data["paritosh"])
 #L=[16, 18, 20, 22, 26, 27, 28, 29, 30, 32, 33, 34, 35, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 50, 51, 52, 54, 55, 56, 57, 59, 60, 61, 62, 63, 64, 65]
@@ -42,7 +42,7 @@ for slot in L:
 
 
 #slots = {}  
-with open('slots.txt') as json_file:  
+with open('day&time.txt') as json_file:  
     slots = json.load(json_file)
 slots["paritosh"]=[]
 slots['paritosh'].append({  
@@ -53,5 +53,5 @@ slots['paritosh'].append({
     'fri': fri
 })
 
-with open('slots.txt', 'w') as outfile:  
+with open('day&time.txt', 'w') as outfile:  
     json.dump(slots, outfile)

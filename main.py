@@ -69,9 +69,7 @@ def findFreeMembers(time_from, time_to, day, slots):
         
         free_users[user_name] = reqd_time_avail
         users_free_count [user_name] = reqd_time_avail.count(1)
-     
-    print(free_users)
-    print(users_free_count)
+    
     
 #   Sorting the users_free_count dictionary in decreasing order by value, so that the 
 #   member with most number of free hours come first
