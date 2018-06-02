@@ -17,7 +17,7 @@ def query():
 
     choice = int(input())
 
-	with open('day&time.txt') as json_file:
+    with open('day&time.txt') as json_file:
         hours = json.load(json_file)
 
     if (choice == 1):

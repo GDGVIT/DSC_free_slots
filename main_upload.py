@@ -7,6 +7,8 @@ Created on Sun May 20 13:31:02 2018
 main_upload_screenshots
 """
 import os
+current_dir = os.getcwd()
+
 from screenshotAnalyzer import convertImage2json
 from slotToTime import convertSlotToTime
 
@@ -15,7 +17,7 @@ def main(folderAddress):
     """ Analyze all the screenshots in test images directory ,
         extract free slot information of members and store it in
         json format """
-    os.chdir(folderAddress+"test\\test images")
+    os.chdir(folderAddress+r'\Web\static\img')
     files = []
 
     #       Add all the filenames present in the folder to the list - 'files'
@@ -36,4 +38,4 @@ def main(folderAddress):
 
 if __name__ == "__main__":
 
-    main("C:\\Users\\parit\\DSC_free_slots\\")
+    main(current_dir)

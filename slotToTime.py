@@ -8,7 +8,9 @@ time to slot
 """
 def store2json (name, days):
     
-    import json
+    import json,os
+    current_dir = os.getcwd()
+    
     with open('day&time.txt') as json_file:  
         hours = json.load(json_file)
         hours[name]=[]
@@ -23,6 +25,8 @@ def store2json (name, days):
     with open('day&time.txt', 'w') as outfile:  
         json.dump(hours, outfile)
 
+    
+
 #-----------------------------------------------------------------------------------------------------
         
 def convertSlotToTime():
@@ -31,11 +35,14 @@ def convertSlotToTime():
     import math
     with open('slotNumbers.txt') as json_file:  
         data = json.load(json_file)
-        
     time = [8,9,10,11,12,13,14,15,16,17,18,19,20]  # It contains the hours of the day 
-    
+
+    # print the keys and values
+    #for key in jsonObject:
+     
     for name in data:      #   Loop through FreeSlotNumbers of each member 
-        L = data[name]        
+        L = data[name]
+        
         #    Daywise list of free slots 
         mon = []
         tue = []
@@ -61,13 +68,13 @@ def convertSlotToTime():
                 #thursday
             else:
                  fri.append (time[index])
-                #friday
-        #    List containing the details of all the days
+        
+               
         
         days = [mon, tue, wed, thu, fri]
         
         # Store the data in day&time.txt in json format
         store2json (name, days )
-        return days
-
         
+
+       

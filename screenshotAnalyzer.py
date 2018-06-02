@@ -53,7 +53,7 @@ def convertImage2json( filename ):
     import numpy as np
     
     
-    a = Image.open("test\\test images\\" + filename )
+    a = Image.open(r"Web\static\img"+"\\" + filename )
     
     
     if( a.format == 'png' or a.format == 'PNG'):
