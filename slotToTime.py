@@ -24,6 +24,8 @@ def store2json (name, days):
     
     with open('day&time.txt', 'w') as outfile:  
         json.dump(hours, outfile)
+    temp_dict = {name:hours[name]}
+    return temp_dict
 
     
 
@@ -74,7 +76,8 @@ def convertSlotToTime():
         days = [mon, tue, wed, thu, fri]
         
         # Store the data in day&time.txt in json format
-        store2json (name, days )
+        #store2json (name, days )
+    return store2json(name,days)
         
 
        

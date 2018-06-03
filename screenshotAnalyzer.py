@@ -51,9 +51,10 @@ def convertImage2json( filename ):
     
     from PIL import Image
     import numpy as np
+    import os
     
     
-    a = Image.open(r"Web\static\img"+"\\" + filename )
+    a = Image.open(r"static\img"+"\\" + filename )
     
     
     if( a.format == 'png' or a.format == 'PNG'):
@@ -163,6 +164,7 @@ def convertImage2json( filename ):
                 
     #     Store the data of free slot numbers in  a json file
     save2json (filename, free)
+    os.remove(r"static\img"+"\\" + filename)
     return free  
             
     
