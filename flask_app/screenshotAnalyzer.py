@@ -27,23 +27,6 @@ def findFirstBlock ( array , colors):
     pos = [i,j]
     return pos
 
-# -----------------------------------------------------------------------------------------------------------------------
-
-def save2json (filename, free):
-    
-    import json,os
-    current_dir = os.getcwd()
-    
-    free.sort()
-    
-    with open('slotNumbers.txt') as json_file: 
-        slots = json.load(json_file)
-        
-    slots[filename.split('.')[0]] = free
-    
-    with open('slotNumbers.txt', 'w') as outfile:  
-        json.dump(slots, outfile)
-    
 
 #   ---------------------------------------------------------------------------------------------------------------------   
 def convertImage2json( filename ):
@@ -163,9 +146,8 @@ def convertImage2json( filename ):
             free.append(e)
                 
     #     Store the data of free slot numbers in  a json file
-    save2json (filename, free)
     os.remove(r"static\img"+"\\" + filename)
-    return free  
+    return [filename.split('.')[0],free]  
             
     
     

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Members</title>
+    <link rel="stylesheet" href="../styles/materialize.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<div id="findMembersContainer">
+
+    <div class="time-table">
+        <h2 class="center-align">Find Members</h2>
+        <table class="centered">
+            <thead>
+            <tr>
+                <th>Start</th>
+                <th>8:00</th>
+                <th>9:00</th>
+                <th>10:00</th>
+                <th>11:00</th>
+                <th>12:00</th>
+                <th>13:00</th>
+                <th>14:00</th>
+                <th>15:00</th>
+                <th>16:00</th>
+                <th>17:00</th>
+                <th>18:00</th>
+            </tr>
+            <tr>
+                <th>End</th>
+                <th>9:00</th>
+                <th>10:00</th>
+                <th>11:00</th>
+                <th>12:00</th>
+                <th>13:00</th>
+                <th>14:00</TH>
+                <th>15:00</th>
+                <th>16:00</th>
+                <th>17:00</th>
+                <th>18:00</th>
+                <th>19:00</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="monday">
+                <th><b>MONDAY</b></th>
+                <td tabId="1">A1</td>
+                <td tabId="6">F1</td>
+                <td tabId="11">D1</td>
+                <td tabId="16">TB1</td>
+                <td tabId="21">TG1</td>
+                <td rowspan="5"><b>LUNCH</b></td>
+                <td tabId="31">A2</td>
+                <td tabId="36">F2</td>
+                <td tabId="41">D2</td>
+                <td tabId="46">TB2</td>
+                <td tabId="51">TG2</td>
+            </tr>
+            <tr id="tuesday">
+                <th><b>TUESDAY</b></th>
+                <td tabId="2">B1</td>
+                <td tabId="7">G1</td>
+                <td tabId="12">E1</td>
+                <td tabId="17">TC1</td>
+                <td tabId="22">TAA1</td>
+                <td tabId="32">B2</td>
+                <td tabId="37">G2</td>
+                <td tabId="42">E2</td>
+                <td tabId="47">TC2</td>
+                <td tabId="52">TAA2</td>
+            </tr>
+            <tr id="wednesday">
+                <th><b>WEDNESDAY</b></th>
+                <td tabId="3">C1</td>
+                <td tabId="8">A1</td>
+                <td tabId="13">F1</td>
+                <td colspan="2" tabId="18">EXTRAMURAL HOUR</td>
+                <td tabId="33">C2</td>
+                <td tabId="38">A2</td>
+                <td tabId="43">F2</td>
+                <td tabId="48">TD2</td>
+                <td tabId="53">TBB2</td>
+            </tr>
+            <tr id="thursday">
+                <th><b>THURSDAY</b></th>
+                <td tabId="4">D1</td>
+                <td tabId="9">B1</td>
+                <td tabId="14">G1</td>
+                <td tabId="19">TE1</td>
+                <td tabId="24">TCC1</td>
+                <td tabId="34">D2</td>
+                <td tabId="39">B2</td>
+                <td tabId="44">G2</td>
+                <td tabId="49">TE2</td>
+                <td tabId="54">TCC2</td>
+            </tr>
+            <tr id="friday">
+                <th><b>FRIDAY</b></th>
+                <td tabId="5">E1</td>
+                <td tabId="10">C1</td>
+                <td tabId="15">TA1</td>
+                <td tabId="20">TF1</td>
+                <td tabId="25">TD1</td>
+                <td tabId="35">E2</td>
+                <td tabId="40">C2</td>
+                <td tabId="45">TA2</td>
+                <td tabId="50">TF2</td>
+                <td tabId="55">TDD2</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="parent">
+            <a class="waves-effect waes-lightv btn-large findBtn" style="{background-color: #4682B4}"
+               onclick="findMembers()">Find</a>
+            <a class="waves-effect waes-lightv btn-large findBtn" style="{background-color: #4682B4}"
+               onclick="reset()">Reset</a>
+        </div>
+    </div>
+    <div class="nameList"></div>
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>

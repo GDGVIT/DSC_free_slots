@@ -6,29 +6,7 @@ Created on Sun May 13 20:06:17 2018
 
 time to slot
 """
-def store2json (name, days):
-    
-    import json,os
-    current_dir = os.getcwd()
-    
-    with open('day&time.txt') as json_file:  
-        hours = json.load(json_file)
-        hours[name] = {  
-            'mon': days[0], #mon
-            'tue': days[1], #tue
-            'wed': days[2], #wed
-            'thu': days[3], #thu
-            'fri': days[4]  #fri
-        }
-    
-    with open('day&time.txt', 'w') as outfile:  
-        json.dump(hours, outfile)
-    temp_dict = {name:hours[name]}
-    return temp_dict
 
-    
-
-#-----------------------------------------------------------------------------------------------------
         
 def convertSlotToTime(L):
     

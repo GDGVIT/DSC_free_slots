@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="../styles/materialize.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="parent">
+                <img class="logo responsive-img" src="../images/gdg_logo.png"/>
+            </div>
+            <form method="POST" enctype="multipart/form-data" id="formData">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="name" type="text" class="validate" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="regNo" type="text" class="validate" required>
+                        <label for="regNo">Registration Number</label>
+                    </div>
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn" style="background-color: #4885ed">
+                        <span >File</span>
+                        <input type="file" id="imageFile" name="photo">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text"/>
+                    </div>
+                </div>
+                <div class="parent">
+                    <a class="waves-effect waves-light btn-large" style="background-color: #4885ed" onclick="submitDet()">Submit</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

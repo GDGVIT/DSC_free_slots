@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Member</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/materialize.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<div id="searchMemberContainer">
+    <div class="row">
+        <h2 class="center-align">Search Members</h2>
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="input-field col s12">
+                <input id="memberName" type="text" class="validate" required>
+                <label for="memberName">Name</label>
+            </div>
+            <div class="col s12">
+                <label>Day</label>
+                <select id="days" class="browser-default">
+                    <option value="" disabled selected>Select Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+            </div>
+            <div class="row" >
+                <a class="waves-effect waves-light btn-large searchBtn" onclick="searchMember()">Search</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="searchResult col m8 offset-m2" style="margin-bottom: 10%"></div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
