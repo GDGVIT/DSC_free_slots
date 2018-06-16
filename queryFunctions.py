@@ -16,7 +16,7 @@ def free_hrs(name, free_users, reqd_time):
 
 def findFreeSlots(name, day, slots):
     """ Find the free slots of the required member from the club """
-    reqd_day_free_slots = slots[name][0][day] #  Array containing the free hours of the member
+    reqd_day_free_slots = slots[name][day] #  Array containing the free hours of the member
     # the below loop displays the collective free slots of the given member
     for index in range(0,len(reqd_day_free_slots)):
    
@@ -48,7 +48,7 @@ def findFreeMembers(time_from, time_to, day, slots):
     for user_name in slots:
 
         reqd_time_avail = []
-        avail = slots[user_name][0][day]
+        avail = slots[user_name][day]
         for item in reqd_time:
 
             if(item in avail):
